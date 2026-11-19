@@ -1,0 +1,17 @@
+name: CI on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run build and tests
+        run: |
+          echo "Running workflow on push to main"
